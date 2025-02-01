@@ -5,8 +5,8 @@
 You will need to push your image to a registry. If you have not done so, use the following commands to tag and push the images:
 
 ```
-$ docker image tag microfirst 637423430820.dkr.ecr.us-east-1.amazonaws.com/microfirst:latest/microfirst
-$ docker push 637423430820.dkr.ecr.us-east-1.amazonaws.com/microfirst:latest/microfirst
+$ docker image tag microfirst 637423430820.dkr.ecr.us-east-1.amazonaws.com/microfirst:latest
+$ docker push 637423430820.dkr.ecr.us-east-1.amazonaws.com/microfirst:latest
 ```
 
 ## Deployment

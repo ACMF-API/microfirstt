@@ -2,7 +2,7 @@ apiVersion: skaffold/v1
 kind: Config
 build:
   artifacts:
-    - image: 637423430820.dkr.ecr.us-east-1.amazonaws.com/microfirst:latest/microfirst
+    - image: 637423430820.dkr.ecr.us-east-1.amazonaws.com/microfirst:latest
       context: ../../microfirst
       jib: {}
   tagPolicy:

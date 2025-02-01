@@ -46,7 +46,7 @@ spec:
               done
       containers:
         - name: microfirst-app
-          image: 637423430820.dkr.ecr.us-east-1.amazonaws.com/microfirst:latest/microfirst
+          image: 637423430820.dkr.ecr.us-east-1.amazonaws.com/microfirst:latest
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: prod
