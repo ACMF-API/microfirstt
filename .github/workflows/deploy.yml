@@ -72,9 +72,9 @@ jobs:
           
       - name: Deploy Consul to EKS
         run: |
-          kubectl apply -f registry-k8s/application-configmap.yml
-          kubectl apply -f registry-k8s/consul.yml
-          kubectl apply -f registry-k8s/consul-config-loader.yml
+          kubectl apply -f kubernetes/registry-k8s/application-configmap.yml
+          kubectl apply -f kubernetes/registry-k8s/consul.yml
+          kubectl apply -f kubernetes/registry-k8s/consul-config-loader.yml
 
       - name: Wait for Consul to be Ready
         run: |
