@@ -1,0 +1,14 @@
+commonLabels:
+  app.kubernetes.io/genereted-by: JHipster
+
+resources:
+  # Individual apps
+  - microfirst-k8s/microfirst-deployment.yml
+  - microfirst-k8s/microfirst-service.yml
+  - microfirst-k8s/microfirst-postgresql.yml
+  # service discovery eureka/consul
+  - registry-k8s/consul.yml
+  - registry-k8s/consul-config-loader.yml
+  - registry-k8s/application-configmap.yml
+
+patchesJson6902:

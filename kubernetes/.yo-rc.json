@@ -1,0 +1,21 @@
+{
+  "generator-jhipster": {
+    "appsFolders": ["microfirst"],
+    "dbRandomPassword": "e25507a2f6a563e54b1c64eb322bc79acfdf2def702cd1704ed6b1941c89",
+    "deploymentApplicationType": "microservice",
+    "directoryPath": "../../",
+    "dockerPushCommand": "docker push",
+    "dockerRepositoryName": "637423430820.dkr.ecr.us-east-1.amazonaws.com/microfirst:latest",
+    "ingressDomain": null,
+    "ingressType": null,
+    "istio": false,
+    "jhipsterVersion": "8.7.1",
+    "jwtSecretKey": "MzVmYWQyMmQxYzU4ZTI3MmVlZDdjMjY2ZWM0NTZmMTRjNWNkOTI5YTIwZGVhZDNmM2MwMmI4ZWQwMzE2MTcyMmMwZWUxZDc3YmY1NjQwZWE1YmYzYTBlOWRlOWVlNGZiNTg3MA==",
+    "kubernetesNamespace": "default",
+    "kubernetesServiceType": "LoadBalancer",
+    "kubernetesStorageClassName": null,
+    "kubernetesUseDynamicStorage": false,
+    "monitoring": "no",
+    "serviceDiscoveryType": "consul"
+  }
+}

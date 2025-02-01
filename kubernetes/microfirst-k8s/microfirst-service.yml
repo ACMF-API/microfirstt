@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microfirst
+  namespace: default
+  labels:
+    app: microfirst
+spec:
+  selector:
+    app: microfirst
+  ports:
+    - name: http
+      port: 8081

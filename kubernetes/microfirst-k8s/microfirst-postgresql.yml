@@ -1,0 +1,64 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: microfirst-postgresql
+  namespace: default
+  labels:
+    app: microfirst-postgresql
+type: Opaque
+data:
+  postgresql-password: ZTI1NTA3YTJmNmE1NjNlNTRiMWM2NGViMzIyYmM3OWFjZmRmMmRlZjcwMmNkMTcwNGVkNmIxOTQxYzg5
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microfirst-postgresql
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microfirst-postgresql
+  template:
+    metadata:
+      labels:
+        app: microfirst-postgresql
+    spec:
+      volumes:
+        - name: data
+          emptyDir: {}
+      containers:
+        - name: postgres
+          image: postgres:16.4
+          env:
+            - name: POSTGRES_USER
+              value: microfirst
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: microfirst-postgresql
+                  key: postgresql-password
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
+          resources:
+            requests:
+              memory: '512Mi'
+              cpu: '500m'
+            limits:
+              memory: '1Gi'
+              cpu: '1'
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: microfirst-postgresql
+  namespace: default
+spec:
+  selector:
+    app: microfirst-postgresql
+  ports:
+    - port: 5432
