@@ -6,7 +6,6 @@ metadata:
   labels:
     app: microfirst
 spec:
-  type: LoadBalancer
   selector:
     app: microfirst
   ports:
