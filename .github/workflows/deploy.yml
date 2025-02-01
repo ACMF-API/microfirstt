@@ -27,8 +27,8 @@ jobs:
       - name: Make mvnw Executable
         run: chmod +x mvnw
 
-      - name: Build Application and Docker Image
-        run: ./mvnw -Pprod verify jib:dockerBuild -DskipTests -Dmaven.javadoc.skip=true -DskipITs -C
+      # - name: Build Application and Docker Image
+      #   run: ./mvnw -Pprod verify jib:dockerBuild -DskipTests -Dmaven.javadoc.skip=true -DskipITs -C
 
       - name: Verify Dockerfile
         run: |
