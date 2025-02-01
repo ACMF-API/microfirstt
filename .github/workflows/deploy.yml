@@ -69,6 +69,23 @@ jobs:
         run: |
           kubectl config get-contexts
           kubectl cluster-info
+          
+      - name: Deploy Consul to EKS
+        run: |
+          kubectl apply -f registry-k8s/application-configmap.yml
+          kubectl apply -f registry-k8s/consul.yml
+          kubectl apply -f registry-k8s/consul-config-loader.yml
+
+      - name: Wait for Consul to be Ready
+        run: |
+          echo "Waiting for Consul to be ready..."
+          kubectl rollout status deployment/consul --timeout=300s
+
+      - name: Verify Consul Deployment
+        run: |
+          kubectl get pods -o wide
+          kubectl get svc consul
+          kubectl logs -l app=consul --all-containers=true --prefix
 
       - name: Deploy Microservices Using JHipster Script
         run: |
